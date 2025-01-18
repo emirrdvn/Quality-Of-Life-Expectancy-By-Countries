@@ -123,6 +123,28 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 ```
 
+### 8. Korelasyon Matrisi
+
+Veri seti sütunlarının korelasyon matris gösterimi:
+```python
+plt.figure(figsize=(12, 8))
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Korelasyon Matrisi")
+plt.show()
+```
+
+### 9. Modellerin Tanımlanması
+
+Veri seti üzerinde kullanılacak Logistic Regression,SVC,Random Forest ve XGBoost algoritmalarının tanımlanması.
+```python
+models = {
+    "Logistic Regression": LogisticRegression(random_state=42),
+    "Support Vector Classifier": SVC(probability=True, random_state=42),
+    "Random Forest": RandomForestClassifier(random_state=42),
+    "XGBoost": XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42)
+}
+```
+
 ## Çalışma Adımları
 
 1. **Veri Yükleme ve Ön işleme**:
