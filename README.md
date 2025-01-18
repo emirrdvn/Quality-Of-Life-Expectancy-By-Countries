@@ -5,7 +5,7 @@ Bu proje, ülkeler arasındaki yaşam kalitesi verilerini analiz etmeye ve model
 ---
 ## YouTube Tanıtım Videosu
 
-[Proje Tanıtım Videosu](https://youtu.be/obhmKhr0e0I)
+[Proje Tanıtım Videosu](linkburaya)
 
 ---
 ## Proje Amaçları
