@@ -207,9 +207,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-### 12. Model Eğitmeyi Quality Of Live Value Üzerinden Regresyon ile Gerçekleştirme
+### 12. Model Eğitmeyi Quality Of Life Value Üzerinden Regresyon ile Gerçekleştirme
 
-Bu sefer target olarak Quality Of Live Catefory yerine Quality Of Live Value seçiyoruz ve devam ediyoruz.
+Bu sefer target olarak Quality Of Life Catefory yerine Quality Of Life Value seçiyoruz ve devam ediyoruz.
 Yine yukarıda yaptığımız işlemlerden bazılarını tekrar ediyoruz:
 ```python
 X = df.drop(columns=["Quality of Life Value"])  # Diğer tüm özellikler
@@ -220,7 +220,68 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 ```
 
-### 13. 
+### 13. Regresyon Modellerini Tanımlama
+
+Gerekli regresyon modellerini seçiyoruz:
+```python
+models = {
+    "Linear Regression": LinearRegression(),
+    "Random Forest": RandomForestRegressor(random_state=42),
+    "XGBoost": XGBRegressor(random_state=42)
+}
+```
+
+### 14. Regresyon Modellerinin Eğitilmesi
+
+Regresyon modellerini eğitiyoruz:
+```python
+for model_name, model in models.items():
+    # Model eğitimi
+    model.fit(X_train, y_train)
+
+    # Tahmin
+    y_pred = model.predict(X_test)
+
+    # Performans metrikleri
+    mse = mean_squared_error(y_test, y_pred)
+    r2 = r2_score(y_test, y_pred)
+
+    # Sonuçları kaydetme
+    results.append({
+        "Model": model_name,
+        "Mean Squared Error (MSE)": mse,
+        "R-squared (R2)": r2
+    })
+```
+
+### 15. Mean Squared Error ve R-Squared Sonuçları,Grafikleri ve Karşılaştırılması 
+
+Elde ettiğimiz lineer regresyon, Random Forest ve XBG regresyon modellerinin sonuçları:
+```python
+results_df = pd.DataFrame(results)
+print("\nModel Performans Karşılaştırması:")
+print(results_df)
+results_df2= results_df.drop(columns=["Mean Squared Error (MSE)"])
+results_df3 = results_df.drop(columns=["R-squared (R2)"])
+results_df3.set_index("Model", inplace=True)
+results_df3.plot(kind="bar", figsize=(12, 6), alpha=0.8)
+plt.title("Model Performans Karşılaştırması")
+plt.ylabel("Değer")
+plt.xticks(rotation=45)
+plt.legend(title="Metrikler")
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+plt.tight_layout()
+plt.show()
+results_df2.set_index("Model", inplace=True)
+results_df2.plot(kind="bar", figsize=(12, 6), alpha=0.8)
+plt.title("Model Performans Karşılaştırması")
+plt.ylabel("Değer")
+plt.xticks(rotation=45)
+plt.legend(title="Metrikler")
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+plt.tight_layout()
+plt.show()
+```
 
 ## Çalışma Adımları
 
