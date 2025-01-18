@@ -306,7 +306,18 @@ plt.show()
 
 ## Sonuç Analizi
 
+## XGBoost Nedir ?
+XGBoost nedir?
+XGBoost (eXtreme Gradient Boosting), gradyan inişinden faydalanan denetlenen bir öğrenme artırma algoritması olan gradyan artırılmış karar ağaçlarını kullanan dağıtılmış, açık kaynaklı bir makine öğrenme kütüphanesidir. Hızı, verimliliği ve büyük veri kümeleriyle iyi ölçeklenebilme yeteneğiyle bilinir.
 
+Washington Üniversitesi'nden Tianqi Chen tarafından geliştirilen XGBoost, aynı genel çerçeveye sahip gelişmiş bir gradyan güçlendirme uygulamasıdır; yani, zayıf öğrenen ağaçlarını kalıntıları ekleyerek güçlü öğrenenlerle birleştirir. Kütüphane C++, Python, R, Java, Scala ve Julia 1 için mevcuttur .
+
+Karar ağaçları ve güçlendirme
+Karar ağaçları, makine öğreniminde sınıflandırma veya regresyon görevleri için kullanılır. Bir iç düğümün bir özelliği, dalın bir karar kuralını ve her yaprak düğümün veri kümesinin sonucunu temsil ettiği hiyerarşik bir ağaç yapısı kullanırlar.
+
+Karar ağaçları aşırı uyuma eğilimli olduğundan , güçlendirme gibi topluluk yöntemleri genellikle daha sağlam modeller oluşturmak için kullanılabilir. Güçlendirme, birden fazla zayıf ağacı birleştirir; yani, rastgele şanstan biraz daha iyi performans gösteren modeller, güçlü bir öğrenen oluşturur. Her zayıf öğrenen, önceki modellerin yaptığı hataları düzeltmek için sırayla eğitilir. Yüzlerce yinelemeden sonra, zayıf öğrenenler güçlü öğrenenlere dönüştürülür.
+
+Rastgele ormanlar ve güçlendirme algoritmaları, tahmin performansını iyileştirmek için bireysel öğrenen ağaçları kullanan popüler topluluk öğrenme teknikleridir. Rastgele ormanlar, torbalama (önyükleme toplama) kavramına dayanır ve tahminlerini birleştirmek için her ağacı bağımsız olarak eğitirken, güçlendirme algoritmaları, zayıf öğrenenlerin önceki modellerin hatalarını düzeltmek için sıralı olarak eğitildiği bir katkısal yaklaşım kullanır.
 ## Çalışma Adımları
 
 1. **Veri Yükleme ve Ön işleme**:
