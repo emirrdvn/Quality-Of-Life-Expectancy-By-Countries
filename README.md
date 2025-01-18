@@ -304,6 +304,7 @@ plt.show()
 <br/>
 ![image](https://github.com/user-attachments/assets/95483979-1926-456f-9d92-a5ce46e37a38)
 
+## Sonuç Analizi
 
 
 ## Çalışma Adımları
