@@ -56,6 +56,69 @@ pip install pandas numpy scikit-learn xgboost seaborn matplotlib
 
 ---
 
+## Adım Adım İşlemler
+
+### 1. Veri Setinin Yüklenmesi
+
+Veri kümesi `pandas` ile yüklenir:
+```python
+file_path = "Quality_of_Life.csv"
+df = pd.read_csv(file_path)
+```
+
+### 2. Veri Setinin İncelenmesi
+
+Veri seti hakkında genel bilgiler ve eksik veri kontrolü yapılır:
+```python
+print(df.info())
+print(df.isnull().sum())
+```
+
+### 3. Eksik Değerlerin Doldurulması
+
+- Sayısal sütunlardaki eksik değerler medyan ile doldurulur.
+- Kategorik sütunlardaki eksik değerler "Unknown" ile doldurulur:
+```python
+df.fillna(df.median(numeric_only=True), inplace=True)
+df.fillna("Unknown", inplace=True)
+```
+
+### 4. Kategorik Verilerin Sayısallaştırılması
+
+Kategorik veriler, `LabelEncoder` kullanılarak sayısal değerlere dönüştürülür:
+```python
+label_encoders = {}
+for col in df.select_dtypes(include=["object"]).columns:
+    le = LabelEncoder()
+    df[col] = le.fit_transform(df[col])
+    label_encoders[col] = le
+```
+
+### 5. Hedef ve Özellik Değişkenlerinin Ayrılması
+
+Tahmin yapılacak hedef değişken (örneğin `Quality of Life Category`) belirlenir ve veri seti bağımlı (X) ve bağımsız (y) değişkenler olarak ayrılır:
+```python
+target = "Quality of Life Category"
+X = df.drop(columns=[target])
+y = df[target]
+```
+
+### 6. Eğitim ve Test Setlerine Ayırma
+
+Veri seti, eğitim ve test setleri olarak ikiye ayrılır:
+```python
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+### 7. Verilerin Standartlaştırılması
+
+Model performansını artırmak için veriler standartlaştırılır:
+```python
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+```
+
 ## Çalışma Adımları
 
 1. **Veri Yükleme ve Ön işleme**:
