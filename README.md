@@ -31,11 +31,11 @@ Bu proje, ülkeler arasındaki yaşam kalitesi verilerini analiz etmeye ve model
      - XGBoost Regresyonu
 
 4. **Model Performans Değerlendirme**:
-   - **Sınıflandırma Metriğkleri**:
+   - **Sınıflandırma Metrikleri**:
      - Doğruluk (Accuracy)
      - F1 Skoru
      - ROC AUC
-   - **Regresyon Metriğkleri**:
+   - **Regresyon Metrikleri**:
      - Ortalama Kare Hatası (MSE)
      - Kök Ortalama Kare Hatası (RMSE)
      - Ortalama Mutlak Hata (MAE)
@@ -146,7 +146,7 @@ X_test = scaler.transform(X_test)
    - Modelleri MSE, RMSE, MAE ve R² ile değerlendirin.
 
 5. **Model Karşılaştırması**:
-   - Performans metriğklerini bar grafiklerle görün.
+   - Performans metriklerini bar grafiklerle görün.
 
 ---
 
@@ -167,14 +167,14 @@ X_test = scaler.transform(X_test)
 
 ## Görselleştirme
 
-Performans metriğkleri, modellerin kolay karşılaştırılması için bar grafikleri şeklinde gösterilir:
+Performans metrikleri, modellerin kolay karşılaştırılması için bar grafikleri şeklinde gösterilir:
 
-- **Sınıflandırma Metriğkleri**:
+- **Sınıflandırma Metrikleri**:
   - Doğruluk
   - F1 Skoru
   - ROC AUC
 
-- **Regresyon Metriğkleri**:
+- **Regresyon Metrikleri**:
   - Ortalama Kare Hatası (MSE)
   - Kök Ortalama Kare Hatası (RMSE)
   - Ortalama Mutlak Hata (MAE)
@@ -197,4 +197,4 @@ Performans metriğkleri, modellerin kolay karşılaştırılması için bar graf
 
 ## Yazarlar ve Katkılar
 
-Bu proje, yaşam kalitesi metriğklerini analiz etmek ve tahmin etmek amacıyla geliştirilmiştir. Geri bildirimler ve katkılar memnuniyetle karşılanır!
+Bu proje, yaşam kalitesi metriklerini analiz etmek ve tahmin etmek amacıyla geliştirilmiştir. Geri bildirimler ve katkılar memnuniyetle karşılanır!
