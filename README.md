@@ -135,6 +135,8 @@ sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Korelasyon Matrisi")
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/b6636ea2-7e45-41b2-ac83-2859d91c914d)
+
 
 ### 9. Modellerin Tanımlanması
 
@@ -189,6 +191,8 @@ for model_name, model in models.items():
     print("\nClassification Report:")
     print(classification_report(y_test, y_pred))
 ```
+![image](https://github.com/user-attachments/assets/c7bd5cb5-9639-43c2-96b7-78d2f741b4d3)
+
 
 ### 11.Sonuçları Grafik Olarak Gösterme ve Karşılaştırma
 
@@ -208,6 +212,8 @@ plt.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/e7d483fa-4683-4107-b5df-fb1694aa23a0)
+
 
 ### 12. Model Eğitmeyi Quality Of Life Value Üzerinden Regresyon ile Gerçekleştirme
 
