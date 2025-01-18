@@ -77,6 +77,11 @@ Veri seti hakkında genel bilgiler ve eksik veri kontrolü yapılır:
 print(df.info())
 print(df.isnull().sum())
 ```
+![image](https://github.com/user-attachments/assets/ef23e1d4-9541-4225-86ef-5147003ebd07)
+\n
+![image](https://github.com/user-attachments/assets/6c9c0e26-fb5d-4210-ac17-af2fca17491d)
+
+
 
 ### 3. Eksik Değerlerin Doldurulması
 
