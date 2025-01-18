@@ -127,6 +127,7 @@ X_test = scaler.transform(X_test)
 
 Veri seti sütunlarının korelasyon matris gösterimi:
 ```python
+corr_matrix = df.corr()
 plt.figure(figsize=(12, 8))
 sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Korelasyon Matrisi")
@@ -135,7 +136,8 @@ plt.show()
 
 ### 9. Modellerin Tanımlanması
 
-Veri seti üzerinde kullanılacak Logistic Regression,SVC,Random Forest ve XGBoost algoritmalarının tanımlanması.
+Burada sınıflandırma algoritmaları Kullanılacaktır.
+Veri seti üzerinde kullanılacak Logistic Regression,SVC,Random Forest ve XGBoost algoritmalarının tanımlanması:
 ```python
 models = {
     "Logistic Regression": LogisticRegression(random_state=42),
@@ -144,6 +146,81 @@ models = {
     "XGBoost": XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42)
 }
 ```
+
+### 10. Modelleri Eğitme
+
+Kullanılacak modelleri döngü ile eğitip değerlendirm:
+```python
+for model_name, model in models.items():
+    print(f"\nEğitiliyor: {model_name}")
+
+    # Model eğitimi
+    model.fit(X_train, y_train)
+
+    # Tahminler
+    y_pred = model.predict(X_test)
+
+    # Olasılık veya karar fonksiyonu kontrolü
+    if hasattr(model, "predict_proba"):
+        y_proba = model.predict_proba(X_test)
+        auc = roc_auc_score(y_test, y_proba, multi_class="ovr")
+    elif hasattr(model, "decision_function") and y_test.nunique() == 2:  # İkili sınıflandırma kontrolü
+        y_proba = model.decision_function(X_test)
+        auc = roc_auc_score(y_test, y_proba)
+    else:
+        y_proba = None
+        auc = np.nan  # ROC AUC hesaplanamaz
+
+    # Performans metrikleri
+    acc = accuracy_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred, average="weighted")
+
+    # Sonuçları kaydetme
+    results.append({
+        "Model": model_name,
+        "Accuracy": acc,
+        "F1 Score": f1,
+        "ROC AUC": auc
+    })
+
+    # Detaylı sınıflandırma raporu
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred))
+```
+
+### 11.Sonuçları Grafik Olarak Gösterme ve Karşılaştırma
+
+Elde ettiğimiz modellerin sonuçlarını grafik haline dönüştürme ve kıyaslama:
+```python
+results_df = pd.DataFrame(results)
+print("\nModel Karşılaştırma Sonuçları:")
+print(results_df)
+results_df.set_index("Model", inplace=True)
+results_df.plot(kind="bar", figsize=(12, 8), alpha=0.8)
+plt.title("Model Performans Karşılaştırması")
+plt.ylabel("Değer")
+plt.xlabel("Modeller")
+plt.xticks(rotation=45)
+plt.legend(title="Metrikler")
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+plt.tight_layout()
+plt.show()
+```
+
+### 12. Model Eğitmeyi Quality Of Live Value Üzerinden Regresyon ile Gerçekleştirme
+
+Bu sefer target olarak Quality Of Live Catefory yerine Quality Of Live Value seçiyoruz ve devam ediyoruz.
+Yine yukarıda yaptığımız işlemlerden bazılarını tekrar ediyoruz:
+```python
+X = df.drop(columns=["Quality of Life Value"])  # Diğer tüm özellikler
+y = df["Quality of Life Value"]  # Hedef değişken
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+```
+
+### 13. 
 
 ## Çalışma Adımları
 
