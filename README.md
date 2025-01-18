@@ -318,7 +318,9 @@ Karar ağaçları, makine öğreniminde sınıflandırma veya regresyon görevle
 Karar ağaçları aşırı uyuma eğilimli olduğundan , güçlendirme gibi topluluk yöntemleri genellikle daha sağlam modeller oluşturmak için kullanılabilir. Güçlendirme, birden fazla zayıf ağacı birleştirir; yani, rastgele şanstan biraz daha iyi performans gösteren modeller, güçlü bir öğrenen oluşturur. Her zayıf öğrenen, önceki modellerin yaptığı hataları düzeltmek için sırayla eğitilir. Yüzlerce yinelemeden sonra, zayıf öğrenenler güçlü öğrenenlere dönüştürülür.
 
 Rastgele ormanlar ve güçlendirme algoritmaları, tahmin performansını iyileştirmek için bireysel öğrenen ağaçları kullanan popüler topluluk öğrenme teknikleridir. Rastgele ormanlar, torbalama (önyükleme toplama) kavramına dayanır ve tahminlerini birleştirmek için her ağacı bağımsız olarak eğitirken, güçlendirme algoritmaları, zayıf öğrenenlerin önceki modellerin hatalarını düzeltmek için sıralı olarak eğitildiği bir katkısal yaklaşım kullanır.
+<br/>
 [IBM XGBoost Sayfası](https://www-ibm-com.translate.goog/think/topics/xgboost?_x_tr_sl=en&_x_tr_tl=tr&_x_tr_hl=tr&_x_tr_pto=tc)
+<br/>
 ![image](https://github.com/user-attachments/assets/3aa7a380-59b9-4321-b646-59acfd439027)
 
 ## Çalışma Adımları
