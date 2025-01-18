@@ -77,6 +77,7 @@ Veri seti hakkında genel bilgiler ve eksik veri kontrolü yapılır:
 print(df.info())
 print(df.isnull().sum())
 ```
+
 ![image](https://github.com/user-attachments/assets/ef23e1d4-9541-4225-86ef-5147003ebd07)
 
 ### 3. Eksik Değerlerin Doldurulması
@@ -87,6 +88,7 @@ print(df.isnull().sum())
 df.fillna(df.median(numeric_only=True), inplace=True)
 df.fillna("Unknown", inplace=True)
 ```
+
 ![image](https://github.com/user-attachments/assets/6c9c0e26-fb5d-4210-ac17-af2fca17491d)
 
 ### 4. Kategorik Verilerin Sayısallaştırılması
@@ -135,6 +137,7 @@ sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Korelasyon Matrisi")
 plt.show()
 ```
+
 ![image](https://github.com/user-attachments/assets/b6636ea2-7e45-41b2-ac83-2859d91c914d)
 
 
@@ -191,6 +194,7 @@ for model_name, model in models.items():
     print("\nClassification Report:")
     print(classification_report(y_test, y_pred))
 ```
+
 ![image](https://github.com/user-attachments/assets/c7bd5cb5-9639-43c2-96b7-78d2f741b4d3)
 
 
@@ -212,6 +216,7 @@ plt.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
 plt.show()
 ```
+
 ![image](https://github.com/user-attachments/assets/e7d483fa-4683-4107-b5df-fb1694aa23a0)
 
 
@@ -262,6 +267,9 @@ for model_name, model in models.items():
     })
 ```
 
+![image](https://github.com/user-attachments/assets/dd9c7470-1054-4bd9-8170-620026db226b)
+
+
 ### 15. Mean Squared Error ve R-Squared Sonuçları,Grafikleri ve Karşılaştırılması 
 
 Elde ettiğimiz lineer regresyon, Random Forest ve XBG regresyon modellerinin sonuçları:
@@ -290,6 +298,13 @@ plt.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
 plt.show()
 ```
+
+![image](https://github.com/user-attachments/assets/09ecd9a7-b29d-4a0f-bf73-a2aa624759b8)
+![image](https://github.com/user-attachments/assets/3740a78f-8872-499a-a4a8-59c92fc7864c)
+<br/>
+![image](https://github.com/user-attachments/assets/95483979-1926-456f-9d92-a5ce46e37a38)
+
+
 
 ## Çalışma Adımları
 
