@@ -306,7 +306,7 @@ plt.show()
 
 # Sonuç Analizi
 
-## **Model Performansı Karşılaştırması**
+## **QUALITY OF LIFE CATEGORY**
 
 ### **1. Lojistik Regresyon**
 - **Doğruluk (Accuracy)**: %81.25
@@ -342,8 +342,66 @@ plt.show()
 
 - **En İyi Model**: XGBoost, doğruluk (%97.92) ve F1-skoru (0.98) açısından diğer modelleri geride bırakarak en uygun model olarak öne çıkmaktadır.
 - **En İyi İkinci Model**: Derste işlediğimiz modellerden Random Forest Sınıflandırma algoritması doğruluk (%87.50) ve F1-skoru (0.87) ile iyi bir precision vermiştir.
-  
 
+## **QUALITY OF LIFE VALUE**
+
+# Model Performansı Analizi
+
+Bu doküman, üç farklı modelin regresyon problemindeki performans analizini ve ilgili metriklerin karşılaştırmasını içermektedir.
+
+---
+
+## **Model Performansı Karşılaştırması**
+
+### **1. Doğrusal Regresyon (Linear Regression)**
+- **Mean Squared Error (MSE)**: 277.1227
+- **Root Mean Squared Error (RMSE)**: 16.6470
+- **Mean Absolute Error (MAE)**: 12.5057
+- **R-squared (R²)**: 0.8169
+
+**Ana Noktalar:**
+- Basit ve hızlı bir modeldir.
+- Diğer modellere kıyasla daha yüksek hata oranına sahiptir.
+- Veri setindeki karmaşık ilişkileri yeterince yakalayamamıştır.
+
+### **2. Rastgele Orman (Random Forest)**
+- **Mean Squared Error (MSE)**: 59.8929
+- **Root Mean Squared Error (RMSE)**: 7.7390
+- **Mean Absolute Error (MAE)**: 4.5648
+- **R-squared (R²)**: 0.9604
+
+**Ana Noktalar:**
+- Çok yönlü bir modeldir ve genelleştirme kapasitesi yüksektir.
+- En düşük hata oranına sahiptir.
+- Veri setindeki karmaşık ilişkileri başarıyla öğrenmiştir.
+
+### **3. XGBoost**
+- **Mean Squared Error (MSE)**: 112.0884
+- **Root Mean Squared Error (RMSE)**: 10.5872
+- **Mean Absolute Error (MAE)**: 5.1482
+- **R-squared (R²)**: 0.9259
+
+**Ana Noktalar:**
+- Hata oranı Rastgele Orman modeline kıyasla biraz daha yüksektir.
+- Daha hesaplamalı bir modeldir ancak güçlü sonuçlar verir.
+- Büyük ve karmaşık veri setlerinde avantaj sağlar.
+
+---
+
+## **Performans Tablosu**
+
+| Model               | MSE      | RMSE     | MAE      | R²       |
+|---------------------|----------|----------|----------|----------|
+| Linear Regression   | 277.1227 | 16.6470  | 12.5057  | 0.8169   |
+| Random Forest       | 59.8929  | 7.7390   | 4.5648   | 0.9604   |
+| XGBoost             | 112.0884 | 10.5872  | 5.1482   | 0.9259   |
+
+---
+
+## **Sonuç**
+- **En İyi Model**: Rastgele Orman, en düşük hata oranları ve en yüksek R² değeri ile en iyi performansı sergilemiştir.
+- **XGBoost**, doğruluk açısından ikinci sırada yer almakta ve büyük veri setleri için güçlü bir alternatif sunmaktadır.
+- **Doğrusal Regresyon**, basit ve hızlı bir çözüm sunmakla birlikte, daha karmaşık modellerin gerisinde kalmıştır.
 
 ## XGBoost Nedir ?
 XGBoost nedir?
