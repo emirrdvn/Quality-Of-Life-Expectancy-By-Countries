@@ -304,7 +304,46 @@ plt.show()
 <br/>
 ![image](https://github.com/user-attachments/assets/95483979-1926-456f-9d92-a5ce46e37a38)
 
-## Sonuç Analizi
+# Sonuç Analizi
+
+## **Model Performansı Karşılaştırması**
+
+### **1. Lojistik Regresyon**
+- **Doğruluk (Accuracy)**: %81.25
+- **F1-Skoru**: 0.80
+- **Ana Noktalar**:
+  - Dengeli bir model; sınıf 4 ve 5 için güçlü sonuçlar vermektedir.
+  - Sınıf 0 (%25) ve sınıf 1 (%38) için düşük bir **recall** değerine sahiptir.
+  - Basit veri setleri için uygun, hızlı bir yöntemdir.
+
+### **2. Destek Vektör Makinesi (SVC)**
+- **Doğruluk (Accuracy)**: %75.00
+- **F1-Skoru**: 0.70
+- **Ana Noktalar**:
+  - Sınıf 3, 4 ve 5 için güçlü bir performans göstermektedir.
+  - Doğrusal olmayan karar sınırları için faydalı olabilir ancak bu veri setinde sınırlı bir başarı göstermiştir.
+
+### **3. Rastgele Orman (Random Forest)**
+- **Doğruluk (Accuracy)**: %87.50
+- **F1-Skoru**: 0.87
+- **Ana Noktalar**:
+  - Çoğu sınıfta dengeli bir performans göstermektedir.
+  - Çok yönlü ve genelleştirilebilir bir modeldir; metrikler arasında tutarlı sonuçlar vermektedir.
+
+### **4. XGBoost**
+- **Doğruluk (Accuracy)**: %97.92
+- **F1-Skoru**: 0.98
+- **Ana Noktalar**:
+  - Tüm sınıflarda yüksek precision ve recall değerleri ile en iyi performansı sergilemektedir.
+  - Hesaplama açısından daha maliyetli ancak üstün sonuçlar sağlamaktadır.
+  - Bu veri seti için en uygun modeldir.
+
+## **Sonuç**
+
+- **En İyi Model**: XGBoost, doğruluk (%97.92) ve F1-skoru (0.98) açısından diğer modelleri geride bırakarak en uygun model olarak öne çıkmaktadır.
+- **En İyi İkinci Model**: Derste işlediğimiz modellerden Random Forest Sınıflandırma algoritması doğruluk (%87.50) ve F1-skoru (0.87) ile iyi bir precision vermiştir.
+  
+
 
 ## XGBoost Nedir ?
 XGBoost nedir?
