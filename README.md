@@ -412,7 +412,7 @@ Rastgele ormanlar ve güçlendirme algoritmaları, tahmin performansını iyile�
 <br/>
 ![image](https://github.com/user-attachments/assets/3aa7a380-59b9-4321-b646-59acfd439027)
 
-## Çalışma Adımları
+## Genel Çalışma Adımları
 
 1. **Veri Yükleme ve Ön işleme**:
    - `Quality_of_Life.csv` dosyasını yükleyin.
