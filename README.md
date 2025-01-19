@@ -345,14 +345,6 @@ plt.show()
 
 ## **QUALITY OF LIFE VALUE**
 
-# Model Performansı Analizi
-
-Bu doküman, üç farklı modelin regresyon problemindeki performans analizini ve ilgili metriklerin karşılaştırmasını içermektedir.
-
----
-
-## **Model Performansı Karşılaştırması**
-
 ### **1. Doğrusal Regresyon (Linear Regression)**
 - **Mean Squared Error (MSE)**: 277.1227
 - **Root Mean Squared Error (RMSE)**: 16.6470
