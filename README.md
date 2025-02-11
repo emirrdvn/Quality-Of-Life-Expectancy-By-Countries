@@ -3,11 +3,7 @@
 Bu proje, ülkeler arasındaki yaşam kalitesi verilerini analiz etmeye ve modellemeye odaklanmıştır. Farklı sınıflandırma ve regresyon algoritmaları kullanılarak **Yaşam Kalitesi Değeri** ve **Yaşam Kalitesi Kategorisi** tahmin edilmektedir.
 
 ---
-## YouTube Tanıtım Videosu
 
-[Proje Tanıtım Videosu](https://www.youtube.com/watch?v=EfckZ3uqjVc)
-
----
 ## Proje Amaçları
 
 1. **Veri Analizi ve Görselleştirme**:
